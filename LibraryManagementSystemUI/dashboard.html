@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Library Management Portal</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <!-- <link rel="stylesheet" href="../../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"> -->
+    <!-- iCheck -->
+    <!-- <link rel="stylesheet" href="../../../plugins/icheck-bootstrap/icheck-bootstrap.min.css"> -->
+    <!-- JQVMap -->
+    <!-- <link rel="stylesheet" href="../../../plugins/jqvmap/jqvmap.min.css"> -->
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <!-- <link rel="stylesheet" href="../../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> -->
+    <!-- Daterange picker -->
+    <!-- <link rel="stylesheet" href="../../../plugins/daterangepicker/daterangepicker.css"> -->
+    <!-- summernote -->
+    <!-- <link rel="stylesheet" href="../../../plugins/summernote/summernote-bs4.css"> -->
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+
+            </ul>
+
+
+
+        </nav>
+
+        <aside class="main-sidebar sidebar-light-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="dashboard.html" class="brand-link">
+                <img src="pic/logo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Library Portal</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+
+
+
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                        <li class="nav-header">Menu</li>
+                        <li class="nav-item has-treeview menu-open">
+
+                            <a href="dashboard.html" class="nav-link  active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-header"></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Manage Profile
+                                </p>
+                                <i class="fas fa-angle-left right"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" id="viewprofile" class="nav-link">
+                                        <i class="fa fa-chevron-circle-right nav-icon"></i>
+                                        <p>View Profile</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" id="changepassword" class="nav-link">
+                                        <i class="fa fa-chevron-circle-right nav-icon"></i>
+                                        <p>Change Password</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Services
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview admin">
+                                <li class="nav-item">
+                                    <a href="#" id="addbook" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Book</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" id="viewlibrary" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>View Books in Library</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item admin">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Manage Users
+                                </p>
+                                <i class="fas fa-angle-left right"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" id="userlist" class="nav-link">
+                                        <i class="fa fa-chevron-circle-right nav-icon"></i>
+                                        <p>Show Users</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-header"></li>
+                        <li class="nav-item ">
+                            <a href="index.html" id="logout" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Logout
+
+                                </p>
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+
+        </aside>
+
+
+        <div class="content-wrapper" id="admindashboard" style="display: none;">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Dashboard</h1>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>150</h3>
+
+                                    <p>Total Books</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>53<sup style="font-size: 20px"></sup></h3>
+
+                                    <p>Books Present in Library</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>44</h3>
+
+                                    <p>Total Users</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-danger">
+                                <div class="inner">
+                                    <h3 id="total_active_userID">65</h3>
+
+                                    <p>Total Active Users</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- Main row -->
+
+                    <div class="card-body">
+                        <div class="tab-content p-0">
+                            <!-- Morris chart - Sales -->
+                            <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;">
+                                <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
+                            </div>
+                            <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
+                                <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+
+            </section>
+
+        </div>
+
+
+        <div class="content-wrapper" id="viewuserprofile" style="display: none;">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Profile</h1>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">User</a></li>
+                                <li class="breadcrumb-item active">Profile</li>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class=" text-center">
+                        <div class="">
+                            <div class="card">
+                                <h3><strong>Profile Details</strong></h3>
+                                <!-- <p class="text-primary">Fill all form field to go to Next</p> -->
+                                <div class="row">
+                                    <div class="col-md-12 mx-0">
+
+                                        <form id="userdetailsform">
+                                            <!--user info-->
+                                            <fieldset>
+                                                <section class="Content">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <!-- user information card -->
+                                                            <div class="col-md-12 mx-0">
+                                                                <!-- general form elements -->
+                                                                <div class="card card-success">
+
+                                                                    <!-- user infromation -->
+                                                                    <div class="container-fluid">
+                                                                        <div class="row" style="text-align: start;">
+                                                                            <!-- left column -->
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+                                                                                    <div class="form-group">
+                                                                                        <label for="user_fullnameID" class="col-form-label">
+                                                                                            Name<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="name" name="user_fullname" class="form-control" id="user_fullnameID" placeholder="Enter full name">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="user_phoneID" class="col-form-label">Phone<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input name="user_phone" type="name" class="form-control" id="user_phoneID" placeholder="Enter Phone">
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.form part end-->
+
+                                                                            <!-- right column -->
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+
+                                                                                    <div id="gen" class="form-group">
+
+                                                                                        <label class="col-sm-12 col-form-label">Gender<span
+                                                                                                class="text-danger">*</span>:</label>
+
+                                                                                        <div class="row">
+                                                                                            <div class="custom-control custom-radio  mt-2 mb-2">
+                                                                                                <input class="custom-control-input" type="radio" id="gender_maleID" name="user_gender" value="male">
+                                                                                                <label for="gender_maleID" class="custom-control-label" style="font-weight: normal;">Male</label>
+                                                                                            </div>
+                                                                                            <div class="custom-control custom-radio ml-2  mt-2 mb-2">
+                                                                                                <input class="custom-control-input" type="radio" id="gender_femaleID" name="user_gender" value="female">
+                                                                                                <label for="gender_femaleID" class="custom-control-label" style="font-weight: normal;">Female</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                    <div class="form-group">
+                                                                                        <label for="user_emailID" class="col-form-label">Email
+                                                                                            id <span
+                                                                                                class="font-weight-normal"></span></label>
+                                                                                        <div class="">
+                                                                                            <input tabindex="12" name="user_email" type="name" class="form-control" id="user_emailID" placeholder="Enter Email">
+                                                                                        </div>
+                                                                                    </div>
+
+
+
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+                                                                                    <div class="form-group">
+                                                                                        <label for="user_dobID" class="col-form-label">Date Of
+                                                                                            Birth<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input name="user_dob" type="text" class="form-control" id="user_dobID">
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="form-group">
+                                                                                        <label for="user_semesterID" class="col-form-label">Semester</label>
+                                                                                        <div class="input-group">
+
+                                                                                            <select id="user_semesterID" required name="user_semester" class="form-control fa">
+                                                                                        <option disabled selected>-- Select Semester --</option>
+                                                                                        <option value="I">I</option>
+                                                                                        <option value="II">II</option>
+                                                                                        <option value="III">III</option>
+                                                                                        <option value="IV">IV</option>
+                                                                                        <option value="V">V</option>
+                                                                                        <option value="VI">VI</option>
+                                                                                          </select>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.form part end-->
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </section>
+
+                                            </fieldset>
+
+                                            <!-- address-->
+                                            <fieldset>
+                                                <section class="Content">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <!-- user information card -->
+                                                            <div class="col-md-12 mx-0">
+                                                                <!-- general form elements -->
+                                                                <div class="card card-success">
+
+                                                                    <!-- user infromation -->
+                                                                    <div class="container-fluid">
+                                                                        <div class="row" style="text-align: start;">
+                                                                            <!-- left column -->
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+                                                                                    <div class="form-group">
+                                                                                        <label for="user_addressID" class="col-form-label">
+                                                                                            Address<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="name" name="user_address" class="form-control" id="user_addressID" placeholder="Enter Address">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="user_stateID" class="col-form-label">
+                                                                                            State<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="name" name="user_state" class="form-control" id="user_stateID" placeholder="Enter State">
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.form part end-->
+
+                                                                            <!-- right column -->
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+
+                                                                                    <div class="form-group">
+                                                                                        <label for="user_pincodeID" class="col-form-label">Pincode<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input name="user_pincode" type="name" class="form-control" id="user_pincodeID" placeholder="Enter pincode">
+                                                                                        </div>
+                                                                                    </div>
+
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+
+                                                                                    <div class="form-group">
+                                                                                        <label for="enter_cityID" class="col-form-label">Distric<span
+                                                                                                class="font-weight-normal"></span></label>
+                                                                                        <div class="">
+                                                                                            <input tabindex="12" name="user_city" type="name" class="form-control" id="enter_cityID" placeholder="Enter distric">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.form part end-->
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </section>
+
+                                            </fieldset>
+
+                                            <!--preview-->
+                                            <fieldset>
+                                                <div class="form-card">
+
+                                                </div>
+                                                <input type="button" id="profileExit" class="exit action-button-previous btn btn-warning" value="Exit" />
+                                                <input type="button" id="profileupdate" class="update action-button btn btn-primary" value="Update" />
+                                            </fieldset>
+
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+        </div>
+
+        <div class="content-wrapper" id="changepassworddiv" style="display: none;">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Reset Password</h1>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">ResetPassword</a></li>
+                                <li class="breadcrumb-item active">Profile</li>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class=" text-center">
+                        <div class="">
+                            <div class="card">
+                                <h3><strong>Reset Password</strong></h3>
+                                <!-- <p class="text-primary">Fill all form field to go to Next</p> -->
+                                <div class="row">
+                                    <div class="col-md-12 mx-0">
+
+                                        <form id="resetpasswordform">
+                                            <!--user info-->
+                                            <fieldset>
+                                                <section class="Content">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <!-- user information card -->
+                                                            <div class="col-md-12 mx-0">
+                                                                <!-- general form elements -->
+                                                                <div class="card card-success">
+
+                                                                    <!-- user infromation -->
+                                                                    <div class="container-fluid">
+                                                                        <div class="row" style="text-align: start;">
+                                                                            <!-- left column -->
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+
+                                                                                    <div class="form-group">
+                                                                                        <label for="current_user_passwordID" class="col-form-label">
+                                                                                            Current Password<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="password" name="current_user_password" class="form-control" id="current_user_passwordID" placeholder="Enter full name">
+                                                                                        </div>
+                                                                                    </div>
+
+
+
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.form part end-->
+
+                                                                            <!-- right column -->
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+
+
+                                                                                    <div class="form-group">
+                                                                                        <label for="user_passwordID" class="col-form-label">
+                                                                                            New Password<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="password" name="user_password" class="form-control" id="user_passwordID" placeholder="Enter full name">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="verify_passwordID" class="col-form-label">
+                                                                                            Verify Password<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="password" name="verify_password" class="form-control" id="verify_passwordID" placeholder="Enter full name">
+                                                                                        </div>
+                                                                                        <span id="verifypasswordspan" class="text-danger ml-2"></span>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.form part end-->
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </section>
+
+                                            </fieldset>
+
+
+                                            <!--preview-->
+                                            <fieldset>
+                                                <div class="form-card">
+
+                                                </div>
+                                                <!-- <input type="button" id="profileExit" class="exit action-button-previous btn btn-warning" value="Exit" /> -->
+                                                <input type="button" id="updatepassword" class="update action-button btn btn-primary" value="Update" />
+                                            </fieldset>
+
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+        </div>
+
+        <div class="content-wrapper" id="addbookdiv" style="display: none;">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Add Book</h1>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Add Book</a></li>
+                                <li class="breadcrumb-item active">User</li>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class=" text-center">
+                        <div class="">
+                            <div class="card">
+                                <h3><strong>Add Book</strong></h3>
+                                <!-- <p class="text-primary">Fill all form field to go to Next</p> -->
+                                <div class="row">
+                                    <div class="col-md-12 mx-0">
+
+                                        <form id="addbookform">
+                                            <!--user info-->
+                                            <fieldset>
+                                                <section class="Content">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <!-- user information card -->
+                                                            <div class="col-md-12 mx-0">
+                                                                <!-- general form elements -->
+                                                                <div class="card card-success">
+
+                                                                    <!-- user infromation -->
+                                                                    <div class="container-fluid">
+                                                                        <div class="row" style="text-align: start;">
+                                                                            <!-- left column -->
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+
+                                                                                    <div class="form-group">
+                                                                                        <label for="book_isbnID" class="col-form-label">
+                                                                                            Book ISBN<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="text" name="book_isbn" class="form-control" id="book_isbnID">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="book_authorID" class="col-form-label">
+                                                                                            Book Author<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="text" name="book_author" class="form-control" id="book_authorID">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="book_titleID" class="col-form-label">
+                                                                                            Book Title<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="text" name="book_title" class="form-control" id="book_titleID">
+                                                                                        </div>
+                                                                                    </div>
+
+
+
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.form part end-->
+
+                                                                            <!-- right column -->
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+                                                                                    <div class="form-group">
+                                                                                        <label for="book_yearOfPublicationID" class="col-form-label">
+                                                                                            Year Of  Publication<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="text" name="book_yearOfPublication" class="form-control" id="book_yearOfPublicationID">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="book_languageID" class="col-form-label">
+                                                                                            Book Language<span
+                                                                                                class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="text" name="book_language" class="form-control" id="book_languageID">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="book_publisherID" class="col-form-label">
+                                                                                            Book Publisher</label>
+                                                                                        <div class="">
+                                                                                            <input type="text" name="book_publisher" class="form-control" id="book_publisherID">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="card-body">
+
+                                                                                    <div class="form-group">
+                                                                                        <label for="book_totalpagesID" class="col-form-label">
+                                                                                            Total Number of Pages</label>
+                                                                                        <div class="">
+                                                                                            <input type="text" name="book_totalpages" class="form-control" id="book_totalpagesID">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="book_priceID" class="col-form-label">
+                                                                                            Book Price</label>
+                                                                                        <div class="">
+                                                                                            <input type="text" name="book_price" class="form-control" id="book_priceID">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="book_numberOfCopiesID" class="col-form-label">
+                                                                                            Book Quantity<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                        <div class="">
+                                                                                            <input type="text" name="book_numberOfCopies" class="form-control" id="book_numberOfCopiesID">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.form part end-->
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </section>
+
+                                            </fieldset>
+
+
+                                            <!--preview-->
+                                            <fieldset>
+                                                <div class="form-card">
+
+                                                </div>
+                                                <!-- <input type="button" id="profileExit" class="exit action-button-previous btn btn-warning" value="Exit" /> -->
+                                                <input type="button" id="addbookbtn" class="update action-button btn btn-primary mb-2" value="Add Book" />
+                                            </fieldset>
+
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+        </div>
+        <div class="content-wrapper" id="showlibrarydiv" style="display: none;">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Library</h1>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">HOME</a></li>
+                                <li class="breadcrumb-item active">Library</li>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content-header">
+                <div class="container-fluid">
+
+
+
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header">
+                            <h3 class="card-title">Books In Library</h3>
+                            <h6> <a style="float: right" href="import.html">Excel Import</a> </h6>
+                            <br>
+                            <h6> <a style="float: right;" href="../../../result.xlsx">Excel Import Format</a> </h6>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="librarydt" class="table example2 table-bordered table-hover ">
+
+
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+        <div class="content-wrapper" id="showusersdiv" style="display: none;">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Users</h1>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">HOME</a></li>
+                                <li class="breadcrumb-item active">Users</li>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content-header">
+                <div class="container-fluid">
+
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">User List</h3>
+                            <h6> <a style="float: right" href="import.html">Excel Import</a> </h6>
+                            <br>
+                            <h6> <a style="float: right;" href="../../../result.xlsx">Excel Import Format</a> </h6>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="usersdt" class="table example2 table-bordered table-hover ">
+
+
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2014-2019 <a href="#">LMS</a>.</strong> All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.0
+        </div>
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+    <script src="plugins/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="plugins/Jquery.serializejson/jquery.serializejson.min.js"></script>
+    <script src="plugins/popper/popper.min.js"></script>
+    <script src="plugins/jquery-validation-1.19.2/jquery.validate.min.js"></script>
+    <script src="plugins/jquery-validation-1.19.2/additional-methods.min.js"></script>
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <!-- <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script> -->
+    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="registration.js"></script>
+
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!-- <script>
+            $.widget.bridge('uibutton', $.ui.button)
+        </script> -->
+    <!-- Bootstrap 4 -->
+    <!-- <script src="../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <!-- ChartJS -->
+    <!-- <script src="../../../plugins/chart.js/Chart.min.js"></script> -->
+    <!-- Sparkline -->
+    <!-- <script src="../../../plugins/sparklines/sparkline.js"></script> -->
+    <!-- JQVMap -->
+    <!-- <script src="../../../plugins/jqvmap/jquery.vmap.min.js"></script> -->
+    <!-- <script src="../../../plugins/jqvmap/maps/jquery.vmap.usa.js"></script> -->
+    <!-- jQuery Knob Chart -->
+    <!-- <script src="../../../plugins/jquery-knob/jquery.knob.min.js"></script> -->
+    <!-- daterangepicker -->
+    <!-- <script src="../../../plugins/moment/moment.min.js"></script> -->
+    <!-- <script src="../../../plugins/daterangepicker/daterangepicker.js"></script> -->
+    <!-- Tempusdominus Bootstrap 4 -->
+    <!-- <script src="../../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script> -->
+    <!-- Summernote -->
+    <!-- <script src="../../../plugins/summernote/summernote-bs4.min.js"></script> -->
+    <!-- overlayScrollbars -->
+    <!-- <script src="../../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <script src="dashboard.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <!-- <script src="../../../dist/js/pages/dashboard.js"></script> -->
+    <!-- AdminLTE for demo purposes -->
+    <!-- <script src="../../../dist/js/demo.js"></script> -->
+</body>
+
+</html>

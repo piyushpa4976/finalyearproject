@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "lato", sans-serif;
+    font-size: 16px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.nav {
+    background-image: linear-gradient(rgb(24, 92, 112), rgb(148, 21, 120)), url(pic/p.jpg);
+    border: 1px solid black;
+    width: 100%;
+    align-self: center;
+}
+
+.menu {
+    line-height: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav .menu .menu_item {
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.menu_item:hover .submenu {
+    display: block;
+    transition: 0.8s ease-in;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav .menu .menu_item a {
+    list-style-type: none;
+    margin: 0;
+    color: red;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav .menu .menu_item a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    cursor: pointer;
+    transition: 0.8s ease-in;
+    border-left: 4px solid rgba(400, 00, 60, 0.8);
+}
+
+.submenu {
+    text-transform: none;
+    display: none;
+    border-left: 4px solid transparent;
+    background-color: rgb(119, 17, 17);
+    position: absolute;
+    width: max-content;
+}
+
+.submenu_item a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    cursor: pointer;
+    border-left: 4px solid rgba(400, 00, 60, 0.8);
+}
+
+.logo img {
+    margin: 10px 20px;
+    float: left;
+    width: 60px;
+    height: auto;
+}
+
+footer {
+    background: linear-gradient(blue, red);
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: rgb(230, 14, 14);
+    text-decoration: none;
+}

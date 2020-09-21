@@ -1,0 +1,62 @@
+.login {
+    position: relative;
+    height: 75vh;
+}
+
+.fit {
+    margin: 0;
+    padding: 0;
+}
+
+.borderless {
+    border: none;
+}
+
+.menuh {
+    line-height: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav .active,
+.nav .active a:hover {
+    background: coral;
+}
+
+.nav .active a {
+    color: white
+}
+
+ul li a:hover {
+    color: white;
+    background-color: coral;
+}
+
+td {
+    color: crimson;
+    -moz-text-size-adjust: auto
+}
+
+.nav ul li a:hover {
+    background-color: coral;
+}
+
+.navh .menuh .menu_itemh {
+    position: relative;
+}
+
+.navh .menuh .menu_itemh a {
+    list-style-type: none;
+    margin: 0;
+    color: red;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: block;
+}
+
+.navh .menuh .menu_itemh a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    cursor: pointer;
+    border-left: 4px solid rgba(400, 00, 60, 0.8);
+}

@@ -1,0 +1,23 @@
+.navbar-default {
+    background: none;
+    border: none
+}
+
+.menu .navbar-nav .active a,
+.menu .navbar-nav .active a:hover {
+    background: #FF7F50;
+    color: white;
+    transition: 0.8s ease-out;
+}
+
+.menu .navbar-nav li a:hover {
+    background: #FF7F50;
+    color: white;
+    transition: 0.8s ease-out;
+}
+
+@media (max-width: 1200px) {
+    .menu .pull-right {
+        float: none !important
+    }
+}

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DBKN</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <style>
+        .col-form-label {
+            float: left;
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+
+            </ul>
+
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="dashboard.html" class="brand-link">
+                <img src="pic/logo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">DBKN</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+
+
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-header">Menu</li>
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="dashboard.html" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Form
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="applicationform.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Apply form</p>
+                                    </a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                    <a href="../studentlist/student_list.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Student List</p>
+                                    </a>
+                                </li> -->
+
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Payment History
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/tables/simple.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Payments</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+
+    </div>
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <!-- <section class="content-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Registration Form</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Registration Form</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+          
+        </section> -->
+
+        <!-- Main content -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class=" text-center">
+                    <div class="">
+                        <div class="card">
+                            <h3><strong>Application Form</strong></h3>
+                            <!-- <p class="text-primary">Fill all form field to go to Next</p> -->
+                            <div class="row">
+                                <div class="col-md-12 mx-0">
+
+                                    <form id="msform">
+                                        <!--student info-->
+                                        <fieldset>
+                                            <section class="Content">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <!-- Student information card -->
+                                                        <div class="col-md-12 mx-0">
+                                                            <!-- general form elements -->
+                                                            <div class="card card-success">
+
+                                                                <!-- student infromation -->
+                                                                <div class="container-fluid">
+                                                                    <div class="row formbody">
+                                                                        <!-- left column -->
+                                                                        <div class="col-md-4">
+                                                                            <div class="card-body">
+                                                                                <div class="form-group">
+
+                                                                                    <label for="student_applicationID" class="col-form-label">
+                                                                                        Application Number<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="">
+                                                                                        <input type="name" name="student_application_number" tabindex="1" class="form-control" id="student_applicationID" placeholder="Enter ">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+
+                                                                                    <label for="student_referenceNumberID" class="col-form-label">
+                                                                                       Reference Number<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="">
+                                                                                        <input type="name" name="student_referenceNumber" tabindex="1" class="form-control" id="student_referenceNumberID" placeholder="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+
+                                                                                    <label for="student_nameID" class="col-form-label">
+                                                                                       Student Name<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="">
+                                                                                        <input type="name" name="student__name" tabindex="1" class="form-control" id="student_nameID" placeholder="Enter First Name">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form-group">
+                                                                                    <label for="date_of_birthID" class="col-form-label">Date Of
+                                                                                        Birth<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="">
+                                                                                        <input name="date_of_birth" tabindex="4" type="date" class="form-control" id="date_of_birthID">
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                                <div class="form-group">
+                                                                                    <label for="student_mobile_numberID" class=" col-form-label">Mobile
+                                                                                        Number<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="">
+                                                                                        <input tabindex="11" name="student_phone" type="tel" minlength="10" maxlength="10" class="form-control" id="student_mobile_numberID" placeholder="Enter Mobile Number">
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--/.form part end-->
+
+                                                                        <!-- right column -->
+                                                                        <div class="col-md-4">
+                                                                            <div class="card-body">
+
+                                                                                <div id="gen" tabindex="5" class="form-group row">
+                                                                                    <label class="col-sm-4 col-form-label">Gender<span
+                                                                                            class="text-danger">*</span>:</label>
+
+                                                                                    <div class="custom-control custom-radio col-sm-3 ml-1 mt-2">
+                                                                                        <input class="custom-control-input" type="radio" id="gender_maleID" name="student_gender" value="male">
+                                                                                        <label for="gender_maleID" class="custom-control-label" style="font-weight: normal;">Male</label>
+                                                                                    </div>
+                                                                                    <div class="custom-control custom-radio col-sm-3 ml-1 mt-2">
+                                                                                        <input class="custom-control-input" type="radio" id="gender_femaleID" name="student_gender" value="female">
+                                                                                        <label for="gender_femaleID" class="custom-control-label" style="font-weight: normal;">Female</label>
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="card-body">
+                                                                                <div class="form-group">
+                                                                                    <label for="student_last_nameID" class="col-form-label">Aadhar Number<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="">
+                                                                                        <input tabindex="3" name="student_last_name" type="name" class="form-control" id="student_last_nameID" placeholder="Enter">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="birth_placeID" class="col-form-label">Place Of
+                                                                                        Birth<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="">
+                                                                                        <input tabindex="6" name="birth_place" type="text" class="form-control" id="birth_placeID">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form-group">
+                                                                                    <label for="student_emailID" class="col-form-label">Email
+                                                                                        id <span
+                                                                                            class="font-weight-normal"></span></label>
+                                                                                    <div class="">
+                                                                                        <input tabindex="12" name="student_email" type="name" class="form-control" id="student_emailID" placeholder="Enter Email">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--/.form part end-->
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </section>
+
+                                        </fieldset>
+
+
+                                        <!--address info-->
+                                        <fieldset>
+                                            <section class="Content">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <!-- left column -->
+                                                        <div class="col-md-12 mx-0">
+                                                            <!-- general form elements -->
+                                                            <div class="card card-info">
+
+                                                                <!-- form part start -->
+                                                                <div class="container-fluid">
+                                                                    <div class="row formbody">
+                                                                        <!-- left column -->
+                                                                        <div class="col-md-6 mx-0">
+                                                                            <div class="card-body">
+                                                                                <div style="text-decoration: none;color: blue;">
+                                                                                    <h4>Present Address</h4>
+                                                                                </div>
+
+                                                                                <!-- address-line1 input-->
+                                                                                <div class="form-group row">
+                                                                                    <label for="address_line1ID" class="col-sm-5 col-form-label">Address
+                                                                                        Line
+                                                                                        1<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input id="address_line1ID" name="student_present_address" type="text" multiple placeholder="address line 1" class="form-control">
+                                                                                        <!-- <p class="help-block">c/o, Street address, P.O. box</p> -->
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- postal-code input-->
+                                                                                <div class="control-group row">
+                                                                                    <label for="regionID" class="col-sm-5 col-form-label">Zip
+                                                                                        / Postal Code<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input minlength="6" id="postal_codeID" name="student_present_addresscode" type="text" placeholder="zip or postal code" class="form-control">
+                                                                                        <p class="help-block"></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- address-line2 input-->
+                                                                                <!-- <div class="form-group row">
+                                                                                    <label for="address_line2ID" class="col-sm-5 col-form-label">Address
+                                                                                        Line
+                                                                                        2</label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input id="address_line2ID" name="presentaddline2" type="text" placeholder="address line 2" class="form-control">
+                                                                                        <p class="help-block">Apartment, unit, building, floor, etc.
+                                                                                        </p>
+                                                                                    </div>
+                                                                                </div> -->
+                                                                                <!-- city input-->
+                                                                                <div class="control-group row">
+                                                                                    <label for="cityID" class="col-sm-5 col-form-label">City
+                                                                                        / Town<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input id="cityID" name="student_present_city" type="text" placeholder="city" class="form-control">
+                                                                                        <p class="help-block"></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- region input-->
+                                                                                <div class="control-group row">
+                                                                                    <label for="regionID" class="col-sm-5 col-form-label">State
+                                                                                        / Province /
+                                                                                        Region<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input id="regionID" name="student_present_state" type="text" placeholder="state / province / region" class="form-control">
+                                                                                        <p class="help-block"></p>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <!-- <div class="form-group row">
+                                                                                    <label for="address_mobile_numberID" class="col-sm-5 col-form-label">Mobile
+                                                                                        Number<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input name="presentaddmobno" type="tel" maxlength="10" class="form-control" id="address_mobile_numberID" placeholder="Enter Mobile Number">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label for="address_emailID" class="col-sm-5 col-form-label">Email
+                                                                                        address</label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input name="presentaddemail" type="email" class="form-control" id="address_emailID" placeholder="Enter email">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <label for="address_sms_mobile_numberID" class="col-sm-5 col-form-label">Preffered
+                                                                                        Mobile
+                                                                                        Number for SMS<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input minlength="10" maxlength="10" name="presentaddsmsmob" type="tel" maxlength="10" class="form-control" id="address_sms_mobile_numberID" placeholder="Enter Mobile Number">
+                                                                                    </div>
+                                                                                </div> -->
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--/.form part end-->
+
+                                                                        <!-- right column -->
+                                                                        <div class="col-md-6 mx-0">
+                                                                            <div class="card-body">
+                                                                                <div style="text-decoration: none;color: blue;">
+                                                                                    <h4>Permanent Address</h4>
+                                                                                </div>
+
+                                                                                <div class="form-group mt-1">
+                                                                                    <div class="custom-control custom-checkbox">
+                                                                                        <input class="custom-control-input" type="checkbox" id="same_addressID" value="same_address">
+                                                                                        <label for="same_addressID" style="color:red;" for="same_address" class="custom-control-label">Same
+                                                                                            as Present
+                                                                                            address</label>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <!-- address-line1 input-->
+                                                                                <div class="form-group row has-success has-feedback">
+                                                                                    <label for="permanent_address_line1ID" class="col-sm-5 col-form-label">Address
+                                                                                        Line 1<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input id="permanent_address_line1ID" name="student_permanent_address" type="text" placeholder="address line 1" class="form-control">
+                                                                                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                                                                        <!-- <p class="help-block">c/o, Street address, P.O. box</p> -->
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- postal-code input-->
+                                                                                <div class="control-group row">
+                                                                                    <label for="permanent_postal_codeID" class="col-sm-5 col-form-label">Zip
+                                                                                        /
+                                                                                        Postal Code<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input minlength="6" id="permanent_postal_codeID" name="student_permanent_addresscode" type="text" placeholder="zip or postal code" class="form-control">
+                                                                                        <p class="help-block"></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- address-line2 input-->
+                                                                                <!-- <div class="form-group row">
+                                                                                    <label for="permanent_address_line2ID" class="col-sm-5 col-form-label">Address
+                                                                                        Line 2</label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input id="permanent_address_line2ID" name="parmanentaddline2" type="text" placeholder="address line 2" class="form-control">
+                                                                                        <p class="help-block">Apartment, unit, building, floor, etc.
+                                                                                        </p>
+                                                                                    </div>
+                                                                                </div> -->
+                                                                                <!-- city input-->
+                                                                                <div class="control-group row">
+                                                                                    <label for="permanent_cityID" class="col-sm-5 col-form-label">City
+                                                                                        /
+                                                                                        Town<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input id="permanent_cityID" name="student_permanent_city" type="text" placeholder="city" class="form-control">
+                                                                                        <p class="help-block"></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- region input-->
+                                                                                <div class="control-group row">
+                                                                                    <label for="permanent_regionID" class="col-sm-5 col-form-label">State
+                                                                                        /
+                                                                                        Province / Region<span
+                                                                                            class="text-danger">*</span></label>
+                                                                                    <div class="col-sm-7">
+                                                                                        <input id="permanent_regionID" name="student_permanent_state" type="text" placeholder="state / province / region" class="form-control">
+                                                                                        <p class="help-block"></p>
+                                                                                    </div>
+                                                                                </div>
+
+
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <!--/.form part end-->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </section>
+
+                                        </fieldset>
+
+                                        <!--subject info-->
+                                        <fieldset>
+                                            <section class="Content">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <!-- Student information card -->
+                                                        <div class="col-md-12 mx-0">
+                                                            <!-- general form elements -->
+                                                            <div class="card card-success">
+
+                                                                <!-- student infromation -->
+                                                                <div class="container-fluid">
+                                                                    <div class="row formbody">
+                                                                        <!-- left column -->
+                                                                        <div class="col-md-4">
+                                                                            <div class="card-body">
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--/.form part end-->
+
+                                                                        <!-- right column -->
+                                                                        <div class="col-md-4">
+                                                                            <div class="card-body">
+
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="card-body">
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--/.form part end-->
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </section>
+
+                                        </fieldset>
+
+                                        <!--preview-->
+                                        <fieldset>
+                                            <div class="form-card">
+
+                                            </div>
+                                            <input type="button" name="exit" class="exit action-button-previous btn btn-warning" value="Exit" />
+                                            <input type="button" name="update" class="update action-button btn btn-primary" value="submit" />
+                                        </fieldset>
+
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <!-- /.content -->
+
+
+
+
+
+
+    </div>
+
+    <footer class="main-footer flex-column">
+        <strong>Copyright &copy; 2014-2019 <a href="#">DBKN</a>.</strong> All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.0
+        </div>
+    </footer>
+
+
+
+    <!-- jQuery -->
+    <script src="plugins/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!-- <script>
+            $.widget.bridge('uibutton', $.ui.button)
+        </script> -->
+    <!-- Bootstrap 4 -->
+    <!-- <script src="../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <!-- ChartJS -->
+    <!-- <script src="../../../plugins/chart.js/Chart.min.js"></script> -->
+    <!-- Sparkline -->
+    <!-- <script src="../../../plugins/sparklines/sparkline.js"></script> -->
+    <!-- JQVMap -->
+    <!-- <script src="../../../plugins/jqvmap/jquery.vmap.min.js"></script> -->
+    <!-- <script src="../../../plugins/jqvmap/maps/jquery.vmap.usa.js"></script> -->
+    <!-- jQuery Knob Chart -->
+    <!-- <script src="../../../plugins/jquery-knob/jquery.knob.min.js"></script> -->
+    <!-- daterangepicker -->
+    <!-- <script src="../../../plugins/moment/moment.min.js"></script> -->
+    <!-- <script src="../../../plugins/daterangepicker/daterangepicker.js"></script> -->
+    <!-- Tempusdominus Bootstrap 4 -->
+    <!-- <script src="../../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script> -->
+    <!-- Summernote -->
+    <!-- <script src="../../../plugins/summernote/summernote-bs4.min.js"></script> -->
+    <!-- overlayScrollbars -->
+    <!-- <script src="../../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <!-- <script src="../../../dist/js/pages/dashboard.js"></script> -->
+    <!-- AdminLTE for demo purposes -->
+    <!-- <script src="../../../dist/js/demo.js"></script> -->
+    <script src="applicationform.js"></script>
+</body>
+
+</html>

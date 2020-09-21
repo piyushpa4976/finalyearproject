@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Library Management Portal</title>
+    <link rel="stylesheet" href="plugins/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css">
+    <!-- <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="plugins/jquery-ui-1.12.1/jquery-ui.min.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="registrationstyle.css"> -->
+    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" href="plugins/fontawesome-free/css/font-awesome.min.css"> -->
+    <!-- <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous"> -->
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@900&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> -->
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light navbar-default">
+
+        <a class="navbar-brand" href="index.html">
+            <img id="logo" class="d-inline-block mr-1" alt="Logo" style="height: 80px;" src="pic/logo.png">
+            <div class="d-inline-block mr-1 font-weight-bold">Library<span> Management System</span></div>
+
+        </a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#list">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="list">
+            <span class="mr-auto"></span>
+            <ul class="navbar-nav">
+                <li class="nav-item active"> <a class="nav-link p-3" href="index.html">Home</a></li>
+                <li class="nav-item"> <a class="nav-link p-3" href="index.html">Downloads</a></li>
+                <li class="nav-item"> <a class="nav-link p-3" href="index.html">Help</a></li>
+
+            </ul>
+
+
+
+            <form id="direct_book_search" class="form-inline">
+
+                <div class="input-group">
+
+                    <input class="form-control mr-sm-0 ml-sm-3 fa" type="text" placeholder="Search Book Availabliliy">
+
+                    <!-- <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
+                    <div class="input-group-append">
+                        <button class="btn btn-success my-2 my-sm-0" type="button"><i class="fa fa-search"></i></button>
+                        <!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+
+    <!--end of navbar-->
+    <!--end of header-->
+
+
+    <div class="background">
+        <!-- <section id="clogin" style="display: none;padding: 50px;">
+            <div class="container">
+                <div class="heading text-center">
+                    
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 feature-media center">
+                        <img src="#" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="row dataTxt">
+                    <div class="col-md-8 col-sm-6">
+                        <h4>Instructions for College Login</h4>
+                        <p>Lorem ipsum dolor sit amet, ea eum labitur scsstie percipitoleat fabulas complectitur deterruisset at pro. Odio quaeque reformidans est eu, expetendis intellegebat has ut, viderer invenire ut his. Has molestie percipit an. Falli
+                            volumus efficiantur sed id, ad vel noster propriae. Ius ut etiam vivendo, graeci iudicabit constituto at mea.</p>
+
+                        <br>
+                    </div>
+                    <div class="col-md-4 col-sm-6" id="element2">
+                        <input type="email" class="form-control" placeholder="Login" required> <input type="password" class="form-control" placeholder="Password" required>
+                        <button type="submit" class="btn btn-success btn-block">Login</button>
+                        <br>
+                        <p class="text-center m-t-xs text-md">Do not have an account?</p>
+                        <a href="#">SignUp</a>
+                        <div class="alert alert-success" id="on_success" style="display:none">
+                            <strong>Success!</strong> Registered successfully
+                        </div>
+                        <div class="alert alert-warning" id="on_error" style="display:none">
+                            <strong>Warning!</strong> <span id="warn"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section> -->
+
+
+        <section id="clogin" style="padding: 20px;">
+            <div class="container">
+                <div class="row dataTxt">
+
+                    <div class="col-md-8 col-sm-6">
+
+                        <p></p>
+
+                        <br>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 p-3" id="element2">
+
+
+                        <!-- <div>
+                            <label for="user_nameID" class="control-label">Username<span
+                                    class="text-danger">*</span></label>
+                            <div class="input-group mb-3">
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+
+                        </div> -->
+
+
+
+                        <form id="loginform" autocomplete="off" class="">
+
+
+                            <div class="form-group">
+
+                                <div class="input-group" style="width:60%">
+                                    <!-- <label for="user_typeID" class="control-label">User Type<span
+                                        class="text-danger">*</span></label> -->
+                                    <select id="user_typeID" required name="user_type" class="form-control fa">
+                                    <option disabled selected>-- Select User Type --</option>
+                                    <option value="Staff">Staff</option>
+                                    <option value="Student">Student</option>
+                                    <option value="Admin">Admin</option>
+                                </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <!-- <label for="user_nameID" class="control-label">Username<span
+                                        class="text-danger">*</span></label> -->
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text center fa fa-user" style="align-content: center;"></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="user_nameID" required name="user_name" maxlength="255" placeholder="username">
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <!-- <label for="user_passwordID" class="control-label">Password<span
+                                        class="text-danger">*</span></label> -->
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="fa fa-lock input-group-text"></span>
+                                    </div>
+                                    <input type="password" class="form-control" id="user_passwordID" required name="user_password" maxlength="255" placeholder="password" style="margin-bottom: 0px; padding: 5px 10px;">
+
+                                    <div class="input-group-append" id="showpassword" onclick="showPassword();" style="cursor:pointer;">
+                                        <span class="fa fa-eye input-group-text"></span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="has-icon">
+                                </div>
+                            </div>
+
+
+                            <button type="button" id="loginbtn" class="btn btn-success btn-block">Login</button>
+
+                            <a href="javascript:void(0);" data-toggle="modal" data-target="#ngforgetpwdid" id="anc_forgot_pass" class="text-center m-t-md text-sm" style="color:#ee5c5c;">Forgot Password?</a>
+                            <br>
+                            <br>
+                            <div class="form-group text-center">
+                                <div class="col-xs-12">
+                                    <hr /><a href="javascript:void(0);" title="New User - Register here" data-toggle="modal" class="text-primary" data-target="#registrationid">Don't have an account? Register HERE</a></div>
+                            </div>
+                            <!-- <p class="text-center m-t-xs text-sm">Do not have an account?</p>
+
+                            <a href="javascript:void(0);" data-toggle="modal" class="btn btn-info btn-block m-t-md" id="anc_register" data-target="#registrationid">Create an account</a> -->
+
+
+                        </form>
+
+                        <!-- <form>
+                        <input type="email" class="form-control mt-1" placeholder="email" required>
+                        <input type="password" class="form-control mt-1" placeholder="Password" required>
+                        <button type="submit" class="btn btn-success btn-block mt-2">Login</button>
+                        <a href="#" class="text-danger">Forgot Password</a>
+
+
+                        <div class="row mt-3">
+                            <div class="col-md-4 col-sm-3">
+
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <button type="submit" class="btn btn-success btn-block">Register</button>
+                            </div>
+                            <div class="col-md-4 col-sm-3">
+
+                            </div>
+                        </div>
+                        </form> -->
+                        <!-- <form>
+                            <div class="form-group">
+                                <label class="" for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form> -->
+
+                        <br>
+
+                        <div class="alert alert-success" id="loginon_success" style="display:none">
+                            <strong>Success!</strong> Login successfully.. Redirecting to Homepage.
+                        </div>
+                        <div class="alert alert-warning" id="loginon_error" style="display:none">
+                            <strong>Warning!</strong> <span id="loginon_errorwarn"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+        <!-- Forgot pass model ends here -->
+
+        <div class="modal fade" id="ngforgetpwdid">
+            <div class="modal-dialog">
+                <form id="recoverpasswordform">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Recover Password</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row" id="searchpwd" hide="!searchview">
+
+                                <div class="col-md-12">
+
+                                    <label class="col-md-4 control-label">Full Name</label>
+                                    <div class="col-md-8"><input type="text" class="form-control input-sm" id="Recover_user_nameID" name="user_fullname" placeholder=""></div>
+                                </div>
+
+                                <div class="col-md-12" show="u!=&#39;up&#39;">
+                                    <label class="col-md-4 control-label">Email id</label>
+                                    <div class="col-md-8"><input type="text" class="form-control input-sm" id="Recover_user_emailID" name="user_email"></div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="recoverpasswordbtn">Reset
+                                Password</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+
+        <div class="modal fade" id="registrationid">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create User</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                    </div>
+                    <div class="modal-body">
+                        <!-- Register form -->
+                        <form class="" id="regiterform" style="background:#166eca0d;margin-top:10px;" name="" action="" autocomplete="on" method="post">
+
+                            <div class="row">
+
+
+                                <!-- <div class="col-md-6">
+                                    <div class="form-group" style="width: 100%">
+                                        <label for="user_fullnameID" class="control-label">Full Name</label> <sup>*</sup>
+                                        <div class="has-icon pull-left">
+                                            <input type="text" class="form-control" required="true" name="user_fullname" id="user_fullnameID" minlength="3" placeholder="Full Name" style="margin-bottom: 0px; padding: 5px 10px;"> <i class="ico-user form-control-icon"></i>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="form-group col-md-12">
+
+                                    <div class="input-group" style="width:40%">
+                                        <!-- <label for="user_typeID" class="control-label">User Type<span
+                                            class="text-danger">*</span></label> -->
+                                        <select id="Ruser_typeID" required name="user_type" class="form-control fa">
+                                        <option disabled selected>-- Select User Type --</option>
+                                        <option value="Staff">Staff</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Admin">Admin</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <hr class="col-sm-12 mt-1">
+                                <div class="form-group col-md-6">
+                                    <!-- <label for="user_nameID" class="control-label">Username<span
+                                            class="text-danger">*</span></label> -->
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text center fa fa-user-circle" style="align-content: center;"></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="Ruser_fullnameID" required name="user_fullname" maxlength="255" placeholder="Enter Full Name">
+
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <!-- <label for="user_nameID" class="control-label">Username<span
+                                            class="text-danger">*</span></label> -->
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text center fa fa-envelope" style="align-content: center;"></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="Ruser_emailID" required name="user_email" maxlength="255" placeholder="Enter Email">
+
+                                    </div>
+
+                                </div>
+                                <hr class="col-sm-12 mt-1">
+                                <div class="form-group col-md-6">
+
+                                    <div class="input-group">
+                                        <!-- <label for="user_typeID" class="control-label">User Type<span
+                                            class="text-danger">*</span></label> -->
+                                        <select id="Ruser_classID" required name="user_class" class="form-control fa">
+                                        <option disabled selected>-- Select Class --</option>
+                                        <option value="MCA">MCA</option>
+                                        <option value="IMCA">IMCA</option>
+                                        <option value="BCA">BCA</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+
+                                    <div class="input-group">
+                                        <!-- <label for="user_typeID" class="control-label">User Type<span
+                                            class="text-danger">*</span></label> -->
+                                        <select id="user_semesterID" required name="user_semester" class="form-control fa">
+                                        <option disabled selected>-- Select Semester --</option>
+                                        <option value="I">I</option>
+                                        <option value="II">II</option>
+                                        <option value="III">III</option>
+                                        <option value="IV">IV</option>
+                                        <option value="V">V</option>
+                                        <option value="VI">VI</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <!-- <label for="user_nameID" class="control-label">Username<span
+                                            class="text-danger">*</span></label> -->
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text center fa fa-lock" style="align-content: center;"></span>
+                                        </div>
+                                        <input type="password" class="form-control" id="Ruser_passwordID" required name="user_password" maxlength="255" placeholder="Enter Password">
+
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <!-- <label for="user_nameID" class="control-label">Username<span
+                                            class="text-danger">*</span></label> -->
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text center fa fa-lock" style="align-content: center;"></span>
+                                        </div>
+                                        <input type="password" class="form-control" id="Ruser_password_verifyID" required name="user_password_verify" maxlength="255" placeholder="Verify Password">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <!-- <label for="user_nameID" class="control-label">Username<span
+                                            class="text-danger">*</span></label> -->
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text center fa fa-mobile" style="align-content: center;"></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="user_phoneID" required name="user_phone" maxlength="10" placeholder="Enter Phone">
+
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6 " style="width: 100%;">
+                                    <!-- <label for="user_nameID" class="control-label">Username<span
+                                            class="text-danger">*</span></label> -->
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text center fa fa-address-book" style="align-content: center;"></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="user_pincodeID" required name="user_pincode" maxlength="6" placeholder="Address Pincode">
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- <div class="col-md-6">
+                                    <div class="form-group" style="width: 100%">
+                                        <label for="user_emailID" class="control-label">Reference Number</label> <sup>*</sup>
+                                        <div class="has-icon pull-left">
+                                            <input type="text" class="form-control" required="true" name="user_email" id="user_emailID" maxlength="16" style="margin-bottom: 0px; padding: 5px 10px;" placeholder="Reference Number">
+                                            <i class="ico-user2 form-control-icon"></i>
+
+                                           
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-md-2">
+                                        <div class="has-icon pull-left mt-3">
+                                            <input type="button" class="mt-3 btn btn-success" id="btnverify" name="btnverify" value="verify">
+                                            <i class="ico-user2 form-control-icon"></i>
+
+                                        </div>
+                                    </div> -->
+
+
+
+
+                                <!-- <div class="col-md-6">
+                                    <div class="form-group" style="width: 100%">
+                                        <label class="control-label">Password</label> <sup>*</sup>
+                                        <div class="has-icon pull-left">
+                                            <input type="password" class="form-control" required="true" name="student_password" id="rstudent_password" maxlength="255" placeholder="Password" style="margin-bottom: 0px; padding: 5px 10px;">
+                                            <i class="ico-key2 form-control-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" style="width: 100%">
+                                        <label class="control-label">Retype Password</label>
+                                        <sup>*</sup>
+                                        <div class="has-icon pull-left">
+                                            <input type="password" class="form-control" required="true" name="repeatpassword" id="repeatpassword" maxlength="255" placeholder="Repeat Password" style="margin-bottom: 0px; padding: 5px 10px;"> <i class="ico-asterisk form-control-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group" style="width: 100%">
+                                        <label class="control-label">Email</label>
+                                        <div class="has-icon pull-left">
+                                            <input type="email" class="form-control" required="true" name="student_email" id="rstudent_email" maxlength="40" placeholder="you@mail.com" style="margin-bottom: 0px; padding: 5px 10px;">
+                                            <i class="ico-envelop form-control-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" style="width: 100%">
+                                        <label class="control-label">Mobile Number</label>
+                                        <sup>*</sup>
+                                        <div class="has-icon pull-left">
+                                            <input type="text" class="form-control" required="true" name="student_phone" id="rstudent_phone" maxlength="10" minlength="10" placeholder="Mobile Number" style="margin-bottom: 0px; padding: 5px 10px;">
+                                            <i class="ico-mobile form-control-icon"></i>
+
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+
+                        </form>
+                        <!-- Register form -->
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="registerbtn" class="btn btn-primary">Register</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+
+
+        <!-- <div class="modal fade scope" id="ngforgetpwdid" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" app="app" controller="forgetpwdctrl" style="display: none;">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <button type="button" id="md_form_close_ng" class="close" data-dismiss="modal">�</button>
+                        <h3 class="semibold modal-title text-primary"><label id="md-title">Forget Password Section</label></h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4>Recover Password</h4>
+                            </div>
+                            <div class="panel-body" id="searchpwd" hide="!searchview">
+
+                                <div class="form-group col-md-12">
+                                    <div class="col-md-8">
+                                        <label class="col-sm-2 control-label"><input type="radio" model="u" value="p" init="u=&#39;p&#39;" click="invert()" class="not-empty" name="3"></label>
+                                        <label class="col-sm-10 control-label">Forgot Password</label>
+                                    </div>
+
+                                </div>
+                                <hr>
+
+
+                                <div class="col-md-12 mar">
+
+                                    <label class="col-sm-4 control-label mar">Full Name</label>
+                                    <div class="col-sm-6"><input type="text" class="form-control input-sm pristine untouched valid empty" focus="invert()" model="searparam" placeholder="Minimum Length 4 character" style="padding:15px;margin-bottom:14px;"></div>
+                                </div>
+
+                                <div class="col-md-12 mar" show="u!=&#39;up&#39;">
+                                    <label class="col-sm-4 control-label mar">Mobile No</label>
+                                    <div class="col-sm-6"><input type="text" class="form-control input-sm pristine valid empty touched" model="mobile" style="padding:15px;margin-bottom:14px;"></div>
+                                </div>
+                                <div class="col-md-12 mar hide" show="u!=&#39;p&#39;">
+                                    <label class="col-sm-4 control-label mar">Date of Birth</label>
+                                    <div class="col-sm-6"><input type="text" class="form-control input-sm datepicker" readonly="" model="dob"></div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="panel-body text-center">
+                                <p style="color:red;" class="binding"></p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-primary search-btn binding scope" if="searchview" click="getpwd()" bind="search" disabled="searchflag">Search</a>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Forgot pass model ends here -->
+        <!-- <h4>Students Registration</h4>
+                    <form id="formsection">
+                        <table class="table">
+                            <tr>
+                                <td>enter email id</td>
+                                <td><input type="email" name="email" id="email"></td>
+                            </tr>
+                            <tr>
+                                <td>enter password</td>
+                                <td><input type="password" name="password" id="pswd"></td>
+
+                            </tr>
+                            <tr>
+                                <td>re enter password</td>
+                                <td><input type="password" name="repassword" id="repassword"></td>
+                            </tr>
+
+                        </table>
+                        <input class="btn btn-warning" style="margin-right:20px; text-align: left" type="reset" value="Reset" id="reset_form">
+                        <input class="btn btn-success" type="submit" value="Submit" id="submit">
+                    </form>
+                    <a href="login.html">
+                        <h3>Aleardy Registered Click here</h3>
+                    </a> -->
+
+
+
+
+
+    </div>
+
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2014-2019 <a href="#">LMP</a>.</strong> All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.0
+        </div>
+    </footer>
+
+    <footer>
+        <div class="footer">
+            <h2>
+                <!-- <marquee behavior="" direction="left"><a href="#">this site is created by piyush</a></marquee> -->
+            </h2>
+        </div>
+    </footer>
+</body>
+<script src="plugins/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="plugins/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<script src="plugins/Jquery.serializejson/jquery.serializejson.min.js"></script>
+<script src="plugins/popper/popper.min.js"></script>
+<script src="plugins/jquery-validation-1.19.2/jquery.validate.min.js"></script>
+<script src="plugins/jquery-validation-1.19.2/additional-methods.min.js"></script>
+<script src="registration.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".nav-tabs a").click(function() {
+            $(this).tab('show');
+        });
+        $('.nav-tabs a').on('shown.bs.tab', function(event) {
+            var x = $(event.target).text(); // active tab
+            var y = $(event.relatedTarget).text(); // previous tab
+            $(".act span").text(x);
+            $(".prev span").text(y);
+        });
+    });
+</script>
+
+</html>

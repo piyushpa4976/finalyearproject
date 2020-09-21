@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="bootst/bootstrap.min.css">
+    <link rel="stylesheet" href="bootst/bootstrap.min.js">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+
+    <!--header-->
+    <div class="container-fluid" style="padding: 2px ;background: coral">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href=""><i class="fab fa-facebook-f"  style="color: #fff;font-size: 20px;margin-right: 5px"></i></a>
+                    <a href=""><i class="fab fa-twitter" style="color: #fff;font-size: 20px;margin-right: 5px"></i></a>
+                    <a href=""><i class="fab fa-youtube" style="color: #fff;font-size: 20px;margin-right: 5px"></i></a>
+                    <a href=""><i class="fab fa-google-plus" style="color: #fff;font-size: 20px;margin-right: 5px"></i></a>
+                </div>
+                <div class="col-sm-9 text-right" style="font-size: 16px;color: white">
+                    <span class="glyphicon glyphicon-envelope"></span> andwebdev007@gmail.com ,
+                    <span class="glyphicon glyphicon-earphone"></span> +91-7870492646
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--navbar-->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-4">
+                <img style="padding: 2px" src="pic/logo.png" alt="VBU" srcset="">
+            </div>
+
+            <div class="col-sm-8 menu">
+
+                <nav class="navbar navbar-default">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#list">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="list">
+                        <ul class="nav navbar-nav pull-right" style="margin-top: 15px">
+                            <li> <a href="../public/index.html">Home</a></li>
+                            <li class="active"> <a href="login.html">Login</a></li>
+                            <li> <a href="registration.html">Registration</a></li>
+                            <li> <a href="#">Notification</a></li>
+                            <li> <a href="#">Galary</a></li>
+                            <li> <a href="#">Downloads</a></li>
+                        </ul>
+                    </div>
+
+                </nav>
+
+            </div>
+        </div>
+    </div>
+    <!--end of navbar-->
+    <!--end of header-->
+
+    <main class="login" style="border-top-style: solid;border-width: 1;border-color: chocolate">
+
+        <center id="body" style="display: none">
+
+
+            <div id="logindiv">
+                <div>
+                    <h3>login here</h3>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            Username:
+                        </td>
+                        <td>
+                            <input type="email" name="user" id="email_field">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            Password:
+                        </td>
+                        <td>
+                            <input type="password" name="Password" id="password_field">
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+
+                        <td>
+                            <button class="btn btn-success" onclick="login()">Login</button>
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+
+                <h4> not a member? <a href="registration.html"> register here</a> </h4>
+            </div>
+
+            <div id="logt">
+
+
+                <div class="row" style="width: 100%">
+                    <div class="col-sm-3" style="border-right-style: solid;border-width: 2px;border-color: chocolate; padding-top: 100px">
+                        <ul class="nav navbar-form">
+                            <li class="active" onclick="show_details()"><a href="#details">Student Profile</a></li>
+                            <li class="" onclick="edit_details()"><a href="#edit_profile">Edit Details</a></li>
+                            <li class=""><a href="#">Change password</a></li>
+                            <li class="" id="logta" onclick="logout()"><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-6 table-responsive">
+
+                        <table class="table">
+                            <tr style="border-width: 0">
+                                <th style="border-width: 0">
+                                    <h3>Roll number :</h3>
+                                </th>
+                                <td style="border-width: 0">
+                                    <h3 id="rollno"></h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>name :</th>
+                                <td><span id="name"></span></td>
+                            </tr>
+                            <tr>
+                                <th>mothers name :</th>
+                                <td><span id="mothers_name"></span></td>
+                            </tr>
+                            <tr>
+                                <th>fathers name :</th>
+                                <td><span id="fathers_name"></span></td>
+                            </tr>
+                            <tr>
+                                <th>mobile number :</th>
+                                <td><span id="phone"></span></td>
+                            </tr>
+
+                            <tr>
+                                <th>email id :</th>
+                                <td><span id="email"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="col-sm-3">
+                        <h2>Profile photo</h2>
+                        <img src="pic/back.jpg" alt="pic" class="img-responsive">
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div id="edit_profile">
+                <div class="row" style="width: 100%">
+                    <div class="col-sm-3" style="border-right-style: solid;border-width: 2px;border-color: chocolate; padding-top: 100px">
+                        <ul class="nav navbar-form">
+                            <li class="" onclick="show_details()"><a href="#details">Student Profile</a></li>
+                            <li class="active" onclick="edit_details()"><a href="#editprofile">Edit Details</a></li>
+                            <li class=""><a href="#">Change password</a></li>
+                            <li class="" id="logte" onclick="logout()"><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+
+                    <form id="formsection" class="col-sm-6" style="margin-top: 40px">
+                        <table class="table">
+                            <tr>
+                                <th style="border-width: 0"> Enter first name</th>
+                                <td style="border-width: 0"><input type="text" name="firstname" id="efirst_name"></td>
+                            </tr>
+                            <tr>
+                                <th> Enter last name</th>
+                                <td><input type="text" name="lastname" id="elast_name"></td>
+                            </tr>
+                            <tr>
+                                <th> Enter mothers name</th>
+                                <td><input type="text" name="mothersname" id="emothers_name"></td>
+                            </tr>
+                            <tr>
+                                <th> Enter fathers name</th>
+                                <td><input type="text" name="fathersname" id="efathers_name"></td>
+                            </tr>
+                            <tr>
+                                <th>enter mobile number</th>
+                                <td><input type="text" name="phone" id="ephone"></td>
+
+                            </tr>
+                            <tr>
+                                <th> Enter roll number</th>
+                                <td><input type="text" name="roll" id="eroll"></td>
+                            </tr>
+                        </table>
+                        <input class="btn btn-warning" style="margin-right:20px; text-align: left" type="reset" value="Reset" id="reset_form">
+                        <input class="btn btn-success" type="submit" value="Submit" id="submit">
+
+
+                        <div class="alert alert-success" id="on_success" style="display:none">
+                            <strong>Success!</strong> Registered successfully
+                        </div>
+                        <div class="alert alert-warning" id="on_error" style="display:none">
+                            <strong>Warning!</strong> <span id="warn"></span>
+                        </div>
+                    </form>
+                    <div class="col-sm-3" style="height: 45;widows: 35;">
+                        <h2>Profile photo</h2>
+                        <img src="" alt="pic" class="img-responsive">
+
+                        <input type="file" name="profilepic" id="profilepic">
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <footer>
+        <div class="footer">
+            <h2>
+                <marquee behavior="" direction="left"><a href="#">this site is created by piyush</a></marquee>
+            </h2>
+        </div>
+    </footer>
+
+    <script src="bootst/fireb.js"></script>
+    <script src="login.js"></script>
+</body>
+
+
+</html>

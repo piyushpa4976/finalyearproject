@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="" id="regiterform" style="background:#166eca0d;margin-top:15px;" name="" action="" autocomplete="on" method="post">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" style="width: 100%">
+                    <label class="control-label">Full Name</label> <sup>*</sup>
+                    <div class="">
+                        <input type="text" class="form-control" required="true" name="student_name" id="student_name" minlength="3" placeholder="Full Name" style="margin-bottom: 0px; padding: 5px 10px;"> <i class="ico-user form-control-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" style="width: 100%">
+                    <label class="control-label">Reference Number</label> <sup>*</sup>
+                    <div class="has-icon pull-left">
+                        <input type="text" class="form-control" required="true" name="student_reference_number" id="student_reference_number" maxlength="16" style="margin-bottom: 0px; padding: 5px 10px;" placeholder="User Name">
+                        <i class="ico-user2 form-control-icon"></i>
+                        <!-- <input type="hidden" hidden name="user_name_st" id="user_name_st" value="0" /> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" style="width: 100%">
+                    <label class="control-label">Password</label> <sup>*</sup>
+                    <div class="has-icon pull-left">
+                        <input type="password" class="form-control" required="true" name="student_password" id="student_password" maxlength="255" placeholder="Password" style="margin-bottom: 0px; padding: 5px 10px;"> <i class="ico-key2 form-control-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" style="width: 100%">
+                    <label class="control-label">Retype Password</label>
+                    <sup>*</sup>
+                    <div class="has-icon pull-left">
+                        <input type="password" class="form-control" required="true" name="repeatpassword" id="repeatpassword" maxlength="255" placeholder="Repeat Password" style="margin-bottom: 0px; padding: 5px 10px;"> <i class="ico-asterisk form-control-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group" style="width: 100%">
+                    <label class="control-label">Email</label> <sup>*</sup>
+                    <div class="has-icon pull-left">
+                        <input type="email" class="form-control" required="true" name="student_email" id="student_email" maxlength="40" placeholder="you@mail.com" style="margin-bottom: 0px; padding: 5px 10px;">
+                        <i class="ico-envelop form-control-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" style="width: 100%">
+                    <label class="control-label">Mobile Number</label>
+                    <sup>*</sup>
+                    <div class="has-icon pull-left">
+                        <input type="text" class="form-control" required="true" name="student_phone" id="student_phone" maxlength="10" minlength="10" placeholder="Mobile Number" style="margin-bottom: 0px; padding: 5px 10px;"> <i class="ico-mobile form-control-icon"></i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="registerbtn" class="btn btn-primary">Register</button>
+    </div>
+
+</body>
+<script src="plugins/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="plugins/Jquery.serializejson/jquery.serializejson.min.js"></script>
+<script src=""></script>
+<script>
+    $(document).ready(function() {
+
+        $("#registerbtn").on('click', function() {
+
+            function renameKey(obj, oldKey, newKey) {
+                obj[newKey] = obj[oldKey];
+                delete obj[oldKey];
+                return obj;
+            }
+
+            const json = $("#regiterform").serializeJSON();
+
+            const arr = JSON.parse(JSON.stringify(json));
+            console.log(json);
+            console.log(arr);
+
+            // Object.keys(arr).forEach(obj => renameKey(obj, 'student_email', 'Email Id'));
+            // Object.keys(arr).forEach(function(key, index) {
+            //     renameKey(arr, 'student_email', 'Email Id')
+            //     renameKey(arr, 'student_name', 'name')
+            //     console.log(key);
+            //     console.log(index);
+
+            // });
+            // for(var i=0;i<arr.length)
+            var userDetails = [{
+                "_id": "5078c3a803ff4197dc81fbfb",
+                "email": "user1@gmail.com",
+                "image": "some_image_url",
+                "name": "Name 1"
+            }, {
+                "_id": "5078c3a803ff4197dc81fbfc",
+                "email": "user2@gmail.com",
+                "image": "some_image_url",
+                "name": "Name 2"
+            }];
+            var formattedUserDetails = json.map(({
+                _id: id,
+                email,
+                image,
+                name
+            }) => ({
+                id,
+                email,
+                image,
+                name
+            }));
+            console.log(formattedUserDetails);
+
+        })
+
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,92 @@
+ .navbar-default {
+     background: none;
+     border: #FF7F50
+ }
+ /*     
+    body {
+        font: normal initial Verdana, Arial, sans-serif;
+    }
+     */
+ /* textarea,
+   input {
+       padding: 8px;
+       font-size: 14px;
+       font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+       font-style: normal;
+       font-weight: normal;
+       text-decoration: inherit;
+   } */
+ /* .has-icon {
+     padding: 0px;
+     font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+     font-style: normal;
+     font-weight: normal;
+     text-decoration: inherit;
+ } */
+ 
+ #element2 {
+     border-radius: 10px;
+     background: rgba(255, 255, 255, 0.787)/* Green background with 30% opacity */
+ }
+ /* span {
+    margin-left: 5px;
+} */
+ /* span.valid {
+    width: 16px;
+    height: 16px;
+    color: green;
+    background: url("http://cdn1.iconfinder.com/data/icons/basicset/tick_16.png") left center no-repeat;
+    display: inline-block;
+} */
+ 
+ span.valid {
+     color: green;
+     background: url("http://cdn1.iconfinder.com/data/icons/basicset/tick_16.png") right center no-repeat;
+     display: inline-block;
+ }
+ /* span.error {
+    width: 100%;
+    color: red;
+} */
+ 
+ .navbar-nav .active a,
+ .navbar-nav .active a:hover {
+     border-radius: 4px;
+     background: #50c3d4;
+     color: white;
+     text-decoration-color: white;
+     transition: 0.8s ease-out;
+ }
+ 
+ .navbar-nav li a:hover {
+     border-radius: 5px;
+     background: #50c3d4;
+     color: white;
+     transition: 0.8s ease-out;
+ }
+ 
+ .background {
+     background: url(pic/background10.jpg);
+     background-size: cover;
+     background-position: left;
+     background-repeat: no-repeat;
+     position: static;
+     height: 100vh;
+ }
+ 
+ .footer {
+     background: linear-gradient(blue, red);
+     text-align: center;
+     margin-bottom: 0;
+     padding-bottom: 5px;
+ }
+ 
+ .footer a {
+     color: white;
+     text-decoration: none;
+ }
+ 
+ .footer a:hover {
+     color: rgb(230, 14, 14);
+     text-decoration: none;
+ }
